@@ -1,0 +1,100 @@
+html{
+    overflow-x: hidden;
+}
+*{
+    font-family: helvetica ,arial,sans-serif;
+    margin: 0;
+    
+}
+#wrap-head{
+    text-align: center;
+   
+
+}
+h1{
+     font-size: 1.5em;
+}
+#wrap-mid{
+    text-align: center;
+}
+
+
+
+
+input[type=text]{
+    width:200px;
+   border: 1px solid #ccc;
+    padding: 12px 20px;
+    font-size: 1.5em;
+       border-radius: 4px;
+    
+}
+
+button{
+      background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2em;
+    
+}
+
+button:hover{
+    background-color: #45a049;
+}
+
+th{
+    border:1px solid #cccccc;
+    font-size: 1.2em;
+    text-align: center;
+  
+}
+
+#wrap-res{
+  
+    
+}
+
+#headTable > th{
+    border:none;
+    font-weight: bold;
+    color:#4571DA;
+}
+
+table{
+    margin: 0 auto;
+   width: 50%;
+    
+}
+
+#location{
+    text-align: center;
+    font-size: 2em;
+}
+@media screen and (min-width 550px){
+    th{
+        border:1px solid #cccccc;
+    font-size: 1.2em;
+    text-align: center;
+   width: 10%;
+    }
+}
+@media screen and (max-width: 500px) {
+    
+    th{
+    border:1px solid #cccccc;
+    font-size: 0.8em;
+    text-align: center;
+   
+}
+    
+    h1{
+        font-size: 1.1em;
+    }
+    
+  
+}

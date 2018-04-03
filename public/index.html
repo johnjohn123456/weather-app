@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href='/css/index.css'>
+    <style>
+      #map {
+        height: 400px;
+        width: 50%;
+        text-align: center;
+        margin:0 auto;
+    </style>
+</head>
+
+<body>
+  <br>
+  <br>
+  <br>
+  <section>
+    <div id="wrap-head">
+      <h1>WELCOME TO WEATHER FORECAST</h1>
+    </div>
+  </section>
+  <br>
+  <br>
+  <br>
+  <section>
+    <div id='wrap-mid'>
+      <form id='search'>
+        <input name='search' type='text' placeholder="Location...">
+        <br>
+        <br>
+        <button>SEARCH</button>
+      </form>
+    </div>
+  </section>
+  <br>
+  <br>
+ <section>
+    <div class="row" > 
+      <div id="location"></div> 
+      <br>
+      <br>
+      <div id="map" >
+        <script src=/socket.io/socket.io.js></script>
+        <script src="js/libs/jquery-3.1.0.min.js"></script>
+        <script>
+          function initMap(lat,lng) {
+            var uluru = {lat: lat, lng: lng};
+            var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: uluru
+            });
+            var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+            });
+          }
+          var socket =io();
+          socket.on('sendRes',function(res){
+          lat= res.lat
+          console.log(lat);
+          initMap(res.lat,res.lng)
+          });
+        </script>
+        <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7Vl5ziV9SU_zxoiYbMixUIHqyxvVooIs&callback=initMap">
+        </script>
+      </div>       
+    <br>
+    <br>
+    <div id='wrap-res' >
+      <table>
+        <tr id="headTable">
+          <th>Time</th>
+          <th>Date</th>  
+          <th>Temperature</th>
+          <th>Humidity</th> 
+          <th>Weather</th> 
+        </tr>
+        <tr>
+          <th id="time"></th>    
+          <th  id="date"></th>
+          <th id="temp"></th>  
+          <th id="hum"></th> 
+          <th id="wea"></th> 
+        </tr>
+        <tr>
+          <th id="time3"></th>    
+          <th  id="date12"></th>
+          <th id="temp12"></th>  
+          <th id="hum12"></th> 
+          <th id="wea12"></th>   
+        </tr>
+        <tr>
+          <th id="time123"></th>    
+          <th  id="date123"></th>
+          <th id="temp123"></th>  
+          <th id="hum123"></th> 
+          <th id="wea123"></th>   
+        </tr>
+        <tr>
+          <th id="time1234"></th>    
+          <th  id="date1234"></th>
+          <th id="temp1234"></th>  
+          <th id="hum1234"></th> 
+          <th id="wea1234"></th>   
+        </tr>    
+      </table>
+    </div>
+    </div> 
+  </section>
+    
+<script src=/socket.io/socket.io.js></script>
+<script src="js/libs/jquery-3.1.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
